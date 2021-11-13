@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class bank{
+            constructor(bankcode , bankname , cash){
+                bankcode = bankcode,
+                bankname = bankname,
+                cash = cash
+            }
+            addcash(cashadded){
+                return new bank(this.cash + cashadded.cash)
+            }
+            show(){
+                alert(this.cash)
+            }
+        }
+        let bank1 = new bank( 1 , "bankname" , 100)
+        
+        let add = bank1.addcash(100)
+        add.show()
+    </script>
+</body>
+</html>

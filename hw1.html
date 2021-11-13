@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// Bài 1:
+
+// Thiết lập lớp PhanSo để biểu diễn khái niệm phân số với hai thành phần dữ liệu tử số, mẫu số và các hàm thành phần cộng, trừ, nhân, chia hai phân số, các hàm thành phần xuất, nhập, định giá trị cho phân số. Viết chương trình cho phép nhập vào hai phân số, in ra kết quả các phép toán cộng, trừ, nhân, chia hai phân số kể trên.
+
+
+class PhanSo {
+  constructor(tuso,mauso) {
+      this.tuso = tuso
+      this.mauso = mauso
+  }
+
+
+  cong(phanSo2) {
+      return new PhanSo(this.tuso*phanSo2.mauso + phanSo2.tuso*this.mauso,this.mauso*phanSo2.mauso)
+  }
+
+  tru(phanSo2){
+    return new PhanSo(this.tuso*phanSo2.mauso - phanSo2.tuso*this.mauso,this.mauso*phanSo2.mauso)
+  }
+    
+  nhan(phanSo2) {
+    return new PhanSo(this.tuso*phanSo2.tuso , this.mauso*phanSo2.mauso)
+  }
+  chia(phanSo2) {
+    return new PhanSo(this.tuso*phanSo2.mauso , this.mauso*phanSo2.tuso)
+  }
+  show() {
+    console.log(`${this.tuso}/${this.mauso}`)
+  }
+}
+
+let phanso1 = new PhanSo(1,5)
+let phanSo2 = new PhanSo(2,7)
+let result = phanso1.cong(phanSo2)
+let result2 = phanso1.tru(phanSo2)
+let result3 = phanso1.nhan(phanSo2)
+let result4 = phanso1.chia(phanSo2)
+result.show()
+result2.show()
+result3.show()
+result4.show()
+    </script>
+</body>
+</html>
